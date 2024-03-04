@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #1f1f1f;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    h3,
+    p {
+      color: white;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      background-color: black;
+      color: white;
+      border-color: white;
+    }
+
+    .btn {
+      background-color: red;
+      color: white;
+      border-color: white;
+    }
+  </style>
+
+  <title>Save Student</title>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-4">
+
+      <h3 class="text-center">Student Form</h3>
+      <hr>
+
+      <form action="#" th:action="@{/student/saveProfile}"
+            th:object="${student}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{student_id}"/>
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{username}"/>
+
+        <input type="text" th:field="*{fullName}"
+               class="form-control mb-4" placeholder="Full name">
+
+
+        <input type="number" th:field="*{yearOfStudies}"
+               class="form-control mb-4" placeholder="Year Of Studies">
+
+        <input type="number" th:field="*{currentAverageGrade}"
+               class="form-control mb-4" step="0.01" placeholder="Current Average Grade">
+
+        <input type="number" th:field="*{numberOfRemainingCoursesForGraduation}"
+               class="form-control mb-4" placeholder="Number Of Remaining Courses">
+
+        <button type="submit" class="btn btn-info">Save Profile</button>
+
+        <div class="row justify-content-center">
+          <div class="col-4">
+              <a th:href="@{/student/main-menu}" class="btn btn-danger ml-2">
+              Did You Regret It?
+              </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</div>
+</body>
+
+</html>

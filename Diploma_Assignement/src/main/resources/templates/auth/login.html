@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #1f1f1f;
+            color: white;
+            font-family: Helvetica;
+        }
+
+        h1, h3 {
+            text-align: center;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            font-size: 1.2rem;
+        }
+
+        input[type="text"], input[type="password"] {
+            font-size: 1.2rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        button[type="submit"], a.btn-primary {
+            font-size: 1.2rem;
+            width: 100%;
+            height: 3rem;
+        }
+
+        button.btn-info {
+            background-color: red;
+            border-color: red;
+        }
+
+        a.btn-primary {
+            background-color: red;
+            border-color: red;
+            margin-top: 0.5rem;
+        }
+    </style>
+
+    <title>Login Form</title>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <form action="#" th:action="@{/login}" method="post">
+                <h3>Login Form</h3>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" placeholder="Username"/> <br/><br/>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" placeholder="Password"/> <br/><br/>
+                <button type="submit" class="btn btn-info">Login</button>
+                <a th:href="@{/register}" class="btn btn-primary">Register</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

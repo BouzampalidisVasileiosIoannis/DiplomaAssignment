@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<style>
+    body {
+        background-color: #1f1f1f;
+        color: white;
+        font-family: Helvetica;
+    }
+    
+    h1, h3 {
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    label {
+        font-size: 1.2rem;
+    }
+    
+    select {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+    
+    input[type="text"], input[type="password"] {
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    button[type="submit"], a.btn-primary {
+        font-size: 1.2rem;
+        width: 100%;
+        height: 3rem;
+    }
+    
+    button.btn-info {
+        background-color: red;
+        border-color: red;
+    }
+    
+    a.btn-primary {
+        background-color: red;
+        border-color: red;
+        margin-top: 0.5rem;
+    }
+</style>
+
+<title>Register</title>
+</head>
+<body>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+
+        <form 
+        action="#" 
+        th:action="@{/save}" th:object="${user}" method="post">
+
+
+          <h3>Registration Form</h3>
+          
+          <label for="username">Username:</label>
+          <input type="text" th:field="*{username}" id="username" placeholder="Username" /> <br/><br/>
+          
+          <label for="password">Password:</label>
+          <input type="password" th:field="*{password}" id="password" placeholder="Password" /> <br/><br/>
+          
+          <label for="role">Role:</label>
+          <select th:field="*{role}" id="role" required>
+            <option value="">Select</option>
+            <option value="PROFESSOR">Professor</option>
+            <option value="STUDENT">Student</option>
+          </select> <br/><br/>
+          
+          <button type="submit" class="btn btn-info">Register</button> 
+          
+          <a th:href="@{/login}" class="btn btn-primary">Log in</a>
+          
+          <span th:utext="${successMessage}"></span>
+          
+        </form>
+      
+      </div>
+    </div>
+</div>
+</body>
+</html>      

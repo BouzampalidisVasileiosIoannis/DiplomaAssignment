@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #1f1f1f;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    h3,
+    p {
+      color: white;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      background-color: black;
+      color: white;
+      border-color: white;
+    }
+
+    .btn {
+      background-color: red;
+      color: white;
+      border-color: white;
+    }
+  </style>
+
+  <title>Grade Form</title>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-4">
+
+      <h3 class="text-center">Grade Form</h3>
+      <hr>
+
+      <form action="#" th:action="@{/professor/calculateGrade}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" id="thesis_id" name="thesis_id" th:value="${thesis_id}" />
+
+        <div class="form-group">
+          <label for="impl_grade">Impl Grade:</label>
+          <input type="number" id="impl_grade" name="impl_grade" step="0.01" required />
+        </div>
+
+        <div class="form-group">
+          <label for="presentation_grade">Presentation Grade:</label>
+          <input type="number" id="presentation_grade" name="presentation_grade" step="0.01" required />
+        </div>
+
+        <div class="form-group">
+          <label for="report_grade">Report Grade:</label>
+          <input type="number" id="report_grade" name="report_grade" step="0.01" required />
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-6 text-center">
+            <button type="submit" class="btn btn-info">Save Grade</button>
+          </div>
+          <div class="col-6 text-center">
+            <a th:href="@{/student/main-menu}" class="btn btn-danger ml-2">
+              Did You Regret It?
+            </a>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #1f1f1f;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        h3,
+        p {
+            color: white;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            background-color: black;
+            color: white;
+            border-color: white;
+        }
+
+        .btn {
+            background-color: red;
+            color: white;
+            border-color: white;
+        }
+    </style>
+
+    <title>Save Subject</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h3 class="text-center">Subject Form</h3>
+    <hr>
+
+    <p class="h4 mb-4 text-center">Save Subject</p>
+
+    <form action="#" th:action="@{/professor/saveSubject}"
+          th:object="${subject}" method="POST">
+
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <input type="text" th:field="*{title}"
+                       class="form-control mb-4" placeholder="Title">
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <input type="text" th:field="*{objectives}"
+                       class="form-control mb-4" placeholder="Objectives">
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <button type="submit" class="btn btn-info">Save Subject</button>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+</body>
+
+</html>

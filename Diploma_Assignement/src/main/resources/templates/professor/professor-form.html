@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Link to Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #1f1f1f;
+      color: white;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    h3,
+    p {
+      color: white;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      background-color: black;
+      color: white;
+      border-color: white;
+    }
+
+    .btn {
+      background-color: red;
+      color: white;
+      border-color: white;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: red;
+      color: white;
+      border-color: white;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+  </style>
+
+  <title>Save Professor</title>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h3 class="text-center">Professor Form</h3>
+  <hr>
+
+  <form action="#" th:action="@{/professor/saveProfile}"
+        th:object="${professor}" method="POST">
+
+    <!-- Add hidden form field to handle update -->
+    <input type="hidden" th:field="*{professor_id}"/>
+
+    <!-- Add hidden form field to handle update -->
+    <input type="hidden" th:field="*{username}"/>
+
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <input type="text" th:field="*{fullName}"
+               class="form-control mb-4" placeholder="Full name">
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <input type="text" th:field="*{specialty}"
+               class="form-control mb-4" placeholder="Specialty">
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <input type="number" th:field="*{threshold1}"
+               class="form-control mb-4" step="0.01" placeholder="Threshold 1">
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <input type="number" th:field="*{threshold2}"
+               class="form-control mb-4" placeholder="Threshold 2">
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-info">Save Profile</button>
+          <a th:href="@{/professor/main-menu}" class="btn btn-danger ml-2">
+            Did You Regret It?
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Input Subject Title</title>
+  <!-- Custom CSS -->
+  <style>
+    body {
+            background-color: #1f1f1f;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        h3,
+        p {
+            color: white;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            background-color: black;
+            color: white;
+            border-color: white;
+        }
+
+    .btn {
+      background-color: red;
+      color: white;
+      border-color: white;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h3 class="text-center">Input Subject Title</h3>
+  <hr>
+  <form th:action="@{/professor/myApplicationList}" method="get">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <label for="title">Subject Title:</label>
+        <input type="text" id="title" name="title" class="form-control" required>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-2">
+        <br>
+        <button type="submit" class="btn btn-info">Submit</button>
+      </div>
+    </div>
+
+
+  </form>
+</div>
+</body>
+</html>
