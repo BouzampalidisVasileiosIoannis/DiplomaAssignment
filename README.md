@@ -5,7 +5,7 @@ For the Software Engineering course MYY803 of the Undergraduate Program in Compu
 
  <b> Project Objective: </b>
 
-This project entails the development of a web application utilizing HTML, Java, SQL and Spring Boot tools. Its 
+This project entails the development of a web application utilizing CSS, HTML, Java, SQL and Spring Boot tools. Its 
 primary objective is to facilitate the assignment of diploma theses by professors based on students' 
 progress at the university. The application offers a range of functionalities, including subject 
 management, their display, handling student applications, their display, thesis management and display, 
