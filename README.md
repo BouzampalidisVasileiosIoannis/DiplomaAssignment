@@ -1,6 +1,6 @@
 # Diploma Assignment
 
-This project is implemented by the undergraduate students: -Vasileios Ioannis Bouzampalidis
+This project is implemented by the undergraduate student: -Vasileios Ioannis Bouzampalidis
 For the Software Engineering course MYY803 of the Undergraduate Program in Computer Science And Engineering course of the University of Ioannina.
 
  <b> Project Objective: </b>
